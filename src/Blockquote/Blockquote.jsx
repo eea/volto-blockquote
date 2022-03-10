@@ -21,10 +21,15 @@ const blockquoteTypes = {
       >
         <Icon name="quote left"></Icon>
         <div className="content">
-          <span className="quote">{children}</span>
-          {element.data?.author && (
-            <p className="author">{element.data.author}</p>
+          {!edit && (
+            <>
+              <span className="quote">{children}</span>
+              {element.data?.author && (
+                <p className="author">{element.data.author}</p>
+              )}
+            </>
           )}
+          {edit && children}
         </div>
         <Icon className="quote right" name="quote right"></Icon>
       </blockquote>
