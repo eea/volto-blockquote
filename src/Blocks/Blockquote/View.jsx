@@ -1,18 +1,13 @@
 import React from 'react';
+import config from '@plone/volto/registry';
 
 import './styles.less';
 
-const View = ({ data }) => {
-  const { text, author, as: As = 'span' } = data;
-
-  return (
-    <div className="eea blockquote">
-      <blockquote className="quote">
-        <As>{text}</As>
-        {author && <div className="meta">{author}</div>}
-      </blockquote>
-    </div>
-  );
+const View = ({ data, ...rest }) => {
+  const { template = 'blockquote' } = data;
+  const Blockquote =
+    config.blocks.blocksConfig.blockquote.templates[template].view;
+  return <Blockquote data={data} {...rest} />;
 };
 
 export default View;
