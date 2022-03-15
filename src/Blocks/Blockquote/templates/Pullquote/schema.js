@@ -9,8 +9,7 @@ export default {
   ],
   properties: {
     position: {
-      title: 'Quote position',
-      description: 'Takes effect only in view mode',
+      title: 'Alignment',
       widget: 'align',
     },
   },
