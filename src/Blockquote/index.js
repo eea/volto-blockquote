@@ -10,7 +10,7 @@ export default (config) => {
     pluginId: 'blockquote',
     elementType: 'blockquote',
     element: Blockquote,
-    isInlineElement: false,
+    isInlineElement: true,
     schemaProvider: ({ children, data }) => {
       return children(getSchema(data));
     },

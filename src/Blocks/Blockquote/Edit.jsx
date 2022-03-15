@@ -2,12 +2,14 @@ import React from 'react';
 import { SidebarPortal } from '@plone/volto/components';
 import InlineForm from '@plone/volto/components/manage/Form/InlineForm';
 import View from './View';
-import schema from './schema';
+import getSchema from './schema';
 
 import './styles.less';
 
 const Edit = (props) => {
   const { data = {}, block = null, selected = false, onChangeBlock } = props;
+
+  const schema = getSchema(props);
 
   return (
     <>
