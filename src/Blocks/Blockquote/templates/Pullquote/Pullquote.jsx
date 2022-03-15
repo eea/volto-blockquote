@@ -4,12 +4,9 @@ import { Icon } from 'semantic-ui-react';
 
 const Pullquote = ({ data, mode }) => {
   const { quote, source, position = 'none', reversed = false } = data;
-  const edit = mode === 'edit';
 
   return (
-    <blockquote
-      className={cx('eea pullquote', !edit ? position || 'none' : 'none')}
-    >
+    <blockquote className={cx('eea pullquote', position || 'none')}>
       <Icon name="quote left"></Icon>
       <div className="content">
         {!reversed ? (

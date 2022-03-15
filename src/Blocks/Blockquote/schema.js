@@ -47,15 +47,6 @@ export default (props) => {
         title: 'Source',
         widget: 'textarea',
       },
-      position: {
-        title: 'Quote position',
-        description: 'Takes effect only in view mode',
-        choices: [
-          ['left', 'Left'],
-          ['right', 'Right'],
-          ['none', 'None'],
-        ],
-      },
       ...(templateSchema.properties || {}),
     },
     required: [...(templateSchema.required || [])],
