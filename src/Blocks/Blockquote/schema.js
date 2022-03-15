@@ -2,8 +2,8 @@ import config from '@plone/volto/registry';
 
 export default (props) => {
   const schema =
-    config.blocks.blocksConfig.blockquote.templates[props.data.template]
-      .schema || [];
+    config.blocks.blocksConfig.blockquote?.templates[props.data?.template]
+      ?.schema || [];
   const templateSchema = typeof schema === 'function' ? schema(props) : schema;
   const defaultFieldset =
     templateSchema.fieldsets?.filter(

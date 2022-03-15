@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Blockquote = ({ data }) => {
+const Blockquote = ({ data, mode }) => {
   const { quote, source, as: As = 'span', reversed = false } = data;
-
   return (
     <div className="eea blockquote">
       <blockquote className="quote">
+        {mode === 'edit' && !quote && <p>Please add quote</p>}
         {reversed ? (
           <>
             <As>{quote}</As>
