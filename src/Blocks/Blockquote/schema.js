@@ -17,10 +17,9 @@ export default (props) => {
         title: 'Default',
         fields: [
           'template',
-          'reversed',
           'quote',
           'source',
-          'as',
+          'reversed',
           ...(defaultFieldset?.fields || []),
         ],
       },
@@ -47,14 +46,6 @@ export default (props) => {
       source: {
         title: 'Source',
         widget: 'textarea',
-      },
-      as: {
-        title: 'HTML',
-        choices: [
-          ['p', 'Paragraph'],
-          ['h2', 'Header 2'],
-          ['h4', 'Header 4'],
-        ],
       },
       position: {
         title: 'Quote position',

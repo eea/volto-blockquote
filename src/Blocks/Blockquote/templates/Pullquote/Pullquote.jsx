@@ -3,13 +3,7 @@ import cx from 'classnames';
 import { Icon } from 'semantic-ui-react';
 
 const Pullquote = ({ data, mode }) => {
-  const {
-    quote,
-    source,
-    as: As = 'h4',
-    position = 'none',
-    reversed = false,
-  } = data;
+  const { quote, source, position = 'none', reversed = false } = data;
   const edit = mode === 'edit';
 
   return (
@@ -20,13 +14,13 @@ const Pullquote = ({ data, mode }) => {
       <div className="content">
         {!reversed ? (
           <>
-            <As className="quote">{quote}</As>
+            <h4 className="quote">{quote}</h4>
             {source && <p className="author">{source}</p>}
           </>
         ) : (
           <>
             {source && <p className="author">{source}</p>}
-            <As className="quote">{quote}</As>
+            <h4 className="quote">{quote}</h4>
           </>
         )}
       </div>
