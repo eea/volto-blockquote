@@ -3,7 +3,7 @@ import cx from 'classnames';
 import { Icon } from 'semantic-ui-react';
 
 const Pullquote = ({ data }) => {
-  const { quote, source, position = 'none', reversed = false } = data;
+  const { quote, source, metadata, position = 'none', reversed = false } = data;
 
   return (
     <blockquote className={cx('eea pullquote', position || 'none')}>
@@ -12,12 +12,12 @@ const Pullquote = ({ data }) => {
           <>
             <Pullquote.Quote>{quote}</Pullquote.Quote>
             <Pullquote.Author>{source}</Pullquote.Author>
-            <Pullquote.Metadata>EEA Analyst</Pullquote.Metadata>
+            <Pullquote.Metadata>{metadata}</Pullquote.Metadata>
           </>
         ) : (
           <>
             <Pullquote.Author>{source}</Pullquote.Author>
-            <Pullquote.Metadata>EEA Analyst</Pullquote.Metadata>
+            <Pullquote.Metadata>{metadata}</Pullquote.Metadata>
             <Pullquote.Quote>{quote}</Pullquote.Quote>
           </>
         )}
