@@ -13,7 +13,7 @@ export default {
       widget: 'align',
     },
     metadata: {
-      title: 'Metadata',
+      title: 'Author title',
       widget: 'textarea',
     },
   },
