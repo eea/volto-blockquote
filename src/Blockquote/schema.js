@@ -36,6 +36,7 @@ export default (data) => {
       },
       author: {
         title: 'Author',
+        widget: 'richtext',
       },
       author_position: {
         title: 'Author position',

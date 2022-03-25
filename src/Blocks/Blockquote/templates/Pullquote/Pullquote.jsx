@@ -1,24 +1,37 @@
 import React from 'react';
 import cx from 'classnames';
 import { Icon } from 'semantic-ui-react';
+import config from '@plone/volto/registry';
 
 const Pullquote = ({ data }) => {
   const { quote, source, metadata, position = 'none', reversed = false } = data;
-
+  const Widget = config.blocks.blocksConfig.blockquote.widget;
   return (
     <blockquote className={cx('eea pullquote', position || 'none')}>
       <div className="content">
         {!reversed ? (
           <>
-            <Pullquote.Quote>{quote}</Pullquote.Quote>
-            <Pullquote.Author>{source}</Pullquote.Author>
-            <Pullquote.Metadata>{metadata}</Pullquote.Metadata>
+            <Pullquote.Quote>
+              <Widget value={quote} />
+            </Pullquote.Quote>
+            <Pullquote.Author>
+              <Widget value={source} />
+            </Pullquote.Author>
+            <Pullquote.Metadata>
+              <Widget value={metadata} />
+            </Pullquote.Metadata>
           </>
         ) : (
           <>
-            <Pullquote.Author>{source}</Pullquote.Author>
-            <Pullquote.Metadata>{metadata}</Pullquote.Metadata>
-            <Pullquote.Quote>{quote}</Pullquote.Quote>
+            <Pullquote.Author>
+              <Widget value={source} />
+            </Pullquote.Author>
+            <Pullquote.Metadata>
+              <Widget value={metadata} />
+            </Pullquote.Metadata>
+            <Pullquote.Quote>
+              <Widget value={quote} />
+            </Pullquote.Quote>
           </>
         )}
       </div>

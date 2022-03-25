@@ -14,7 +14,7 @@ export default {
     },
     metadata: {
       title: 'Author title',
-      widget: 'textarea',
+      widget: 'richtext',
     },
   },
   required: [],

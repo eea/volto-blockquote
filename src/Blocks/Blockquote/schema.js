@@ -41,11 +41,11 @@ export default (props) => {
       },
       quote: {
         title: 'Quote',
-        widget: 'textarea',
+        widget: 'richtext',
       },
       source: {
         title: 'Author',
-        widget: 'textarea',
+        widget: 'richtext',
       },
       ...(templateSchema.properties || {}),
     },
