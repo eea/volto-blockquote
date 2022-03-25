@@ -2,28 +2,53 @@ import React from 'react';
 import cx from 'classnames';
 import { Icon } from 'semantic-ui-react';
 
-const Pullquote = ({ data, mode }) => {
-  const { quote, source, position = 'none', reversed = false } = data;
+const Pullquote = ({ data }) => {
+  const { quote, source, metadata, position = 'none', reversed = false } = data;
 
   return (
     <blockquote className={cx('eea pullquote', position || 'none')}>
-      <Icon name="quote left"></Icon>
       <div className="content">
         {!reversed ? (
           <>
-            <h4 className="quote">{quote}</h4>
-            {source && <p className="author">{source}</p>}
+            <Pullquote.Quote>{quote}</Pullquote.Quote>
+            <Pullquote.Author>{source}</Pullquote.Author>
+            <Pullquote.Metadata>{metadata}</Pullquote.Metadata>
           </>
         ) : (
           <>
-            {source && <p className="author">{source}</p>}
-            <h4 className="quote">{quote}</h4>
+            <Pullquote.Author>{source}</Pullquote.Author>
+            <Pullquote.Metadata>{metadata}</Pullquote.Metadata>
+            <Pullquote.Quote>{quote}</Pullquote.Quote>
           </>
         )}
       </div>
-      <Icon className="quote right" name="quote right"></Icon>
     </blockquote>
   );
 };
 
+Pullquote.Quote = ({ children, as: As, ...rest }) => (
+  <div className="quotes wrapper">
+    <Icon className="ri-double-quotes-l"></Icon>
+    {As ? (
+      <As className="quote" {...rest}>
+        {children}
+      </As>
+    ) : (
+      <p className="quote">{children}</p>
+    )}
+    <Icon className="ri-double-quotes-r"></Icon>
+  </div>
+);
+
+Pullquote.Author = ({ children, ...rest }) => (
+  <p className="author" {...rest}>
+    {children}
+  </p>
+);
+
+Pullquote.Metadata = ({ children, ...rest }) => (
+  <p className="meta" {...rest}>
+    {children}
+  </p>
+);
 export default Pullquote;

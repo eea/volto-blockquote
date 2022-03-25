@@ -44,7 +44,7 @@ export default (props) => {
         widget: 'textarea',
       },
       source: {
-        title: 'Source',
+        title: 'Author',
         widget: 'textarea',
       },
       ...(templateSchema.properties || {}),

@@ -4,13 +4,17 @@ export default {
     {
       id: 'default',
       title: 'Default',
-      fields: ['position'],
+      fields: ['position', 'metadata'],
     },
   ],
   properties: {
     position: {
       title: 'Alignment',
       widget: 'align',
+    },
+    metadata: {
+      title: 'Author title',
+      widget: 'textarea',
     },
   },
   required: [],
