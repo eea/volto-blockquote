@@ -1,5 +1,7 @@
 # volto-blockquote
 
+> DEPRECATED: Please use [volto-quote-block](https://github.com/eea/volto-quote-block)
+
 [![Releases](https://img.shields.io/github/v/release/eea/volto-blockquote)](https://github.com/eea/volto-blockquote/releases)
 
 [![Pipeline](https://ci.eionet.europa.eu/buildStatus/icon?job=volto-addons%2Fvolto-blockquote%2Fmaster&subject=master)](https://ci.eionet.europa.eu/view/Github/job/volto-addons/job/volto-blockquote/job/master/display/redirect)
